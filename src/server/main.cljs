@@ -1,0 +1,11 @@
+(ns server.main)
+(require 'express)
+(require '[request-promise :as rp])
+(def port 3000)
+(-> (express)
+    (.get "/" (fn [req res] (.send res "Hello lumo")))
+    (.listen port))
+(-> (str "http://localhost:" port)
+    rp
+    (.then (fn [body] (println "\nReceived:" body)))
+    (.catch (fn [err] (println "\nOops:" (.-stack err)))))

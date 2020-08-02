@@ -1,0 +1,10 @@
+# npm
+node_modules/
+pnpm-lock.yaml
+
+# build
+src-client/
+out/
+
+# test
+*.tgz

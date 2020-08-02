@@ -1,0 +1,25 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rsync -SavLP --del src/client src/common src-client",
+    "build": "lumo -c src-client build.cljs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "@cljs-oss/module-deps": "^1.1.1",
+    "lumo": "^0.20.17",
+    "lumo-cljs": "^1.10.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
